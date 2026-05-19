@@ -1,7 +1,7 @@
 # Disclaimer
 ### This applies to all the branches of this project whether included in the branch or not.
 
-Copyright (c) Sourjya Basu
+Copyright (c) Sourjya Basu \
 Email: <sourjyabose@gmail.com> 
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
