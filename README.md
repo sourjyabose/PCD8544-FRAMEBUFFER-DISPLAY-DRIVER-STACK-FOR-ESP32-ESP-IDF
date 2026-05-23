@@ -2,7 +2,7 @@
 
 ## Text Rendering APIs
 
-| API                                                 | Parameters                                                                           | Main Difference                         | Rendering Method    | Use Case                    |
+| API                                                 | Parameters                                                                           | Description                         | Rendering Method    | Use Case                    |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------- | ------------------- | --------------------------- |
 | `printLCD(string str)`                              | `str` → text string                                                                  | Prints complete string directly to LCD  | Immediate rendering | Simple text output          |
 | `printToFrame(string text)`                         | `text` → text string                                                                 | Prints string into framebuffer first    | Buffered rendering  | Complex UI rendering        |
@@ -14,7 +14,7 @@
 
 ## Shape Rendering APIs
 
-| API                                                                | Parameters                                                                  | Main Difference                     | Primitive Type | Use Case                        |
+| API                                                                | Parameters                                                                  | Description                     | Primitive Type | Use Case                        |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- | ----------------------------------- | -------------- | ------------------------------- |
 | `drawRect(int frame[48][84], int x, int y, int height, int width)` | `frame` → target frame, `x/y` → start position, `height/width` → dimensions | Draws on arbitrary frame array      | Rectangle      | Generic rectangle rendering     |
 | `drawRectToFrame(int height, int width)`                           | `height/width` → dimensions                                                 | Draws on attached framebuffer       | Rectangle      | Scene rendering                 |
@@ -27,7 +27,7 @@
 
 ## Display Pipeline APIs
 
-| API                               | Parameters                                                    | Main Difference                            | Layer      | Use Case                  |
+| API                               | Parameters                                                    | Description                            | Layer      | Use Case                  |
 | --------------------------------- | ------------------------------------------------------------- | ------------------------------------------ | ---------- | ------------------------- |
 | `display()`                       | None                                                          | Public framebuffer flush API               | High-level | Final scene rendering     |
 | `sendframeset(int frame[48][84])` | `frame` → framebuffer pointer                                 | Converts framebuffer into LCD page packets | Mid-level  | Framebuffer serialization |
@@ -37,7 +37,7 @@
 
 ## Framebuffer Management APIs
 
-| API                        | Parameters                    | Main Difference                       | Function            | Use Case             |
+| API                        | Parameters                    | Description                       | Function            | Use Case             |
 | -------------------------- | ----------------------------- | ------------------------------------- | ------------------- | -------------------- |
 | `attach(int (*frame)[84])` | `frame` → framebuffer pointer | Binds framebuffer to renderer context | Framebuffer binding | Multi-buffer systems |
 | `framesetInit()`           | None                          | Initializes framebuffer system        | Initialization      | Rendering setup      |
@@ -47,7 +47,7 @@
 
 ## Coordinate Storage APIs
 
-| API                         | Parameters         | Main Difference                           | Data Flow         | Use Case               |
+| API                         | Parameters         | Description                           | Data Flow         | Use Case               |
 | --------------------------- | ------------------ | ----------------------------------------- | ----------------- | ---------------------- |
 | `CoordsStore(int x, int y)` | `x/y` → coordinate | Stores generated coordinates              | Write operation   | Deferred rasterization |
 | `getCoords()`               | None               | Retrieves stored coordinates sequentially | Read operation    | Geometry playback      |
@@ -57,7 +57,7 @@
 
 ## Hardware Control APIs
 
-| API             | Parameters | Main Difference                        | Hardware Layer        | Use Case           |
+| API             | Parameters | Description                        | Hardware Layer        | Use Case           |
 | --------------- | ---------- | -------------------------------------- | --------------------- | ------------------ |
 | `init()`        | None       | Configures GPIO and LCD reset sequence | Initialization        | Driver startup     |
 | `enable()`      | None       | Pulls chip-enable low                  | Communication control | Begin transmission |
